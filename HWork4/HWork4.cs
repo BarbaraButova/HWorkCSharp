@@ -36,22 +36,29 @@ public static class HWork4
     public static void Task27()
     {
         WriteLine("Введите число");
-        int number = Math.Abs(Convert.ToInt32(ReadLine())); //123
+        int number = Math.Abs(Convert.ToInt32(ReadLine()));
           
-        int numberOfDigits = Convert.ToInt32(Math.Log10(number) - (Math.Log10(number) % 1) + 1); //3
-        int count = numberOfDigits - 1; //2
+        int numberOfDigits = Convert.ToInt32(Math.Log10(number) - (Math.Log10(number) % 1) + 1);
+        int count = numberOfDigits - 1;
         int firstDigit = Math.DivRem(number, Convert.ToInt32(Math.Pow(10, count)), out int remainder);
         int sum = firstDigit;
         while (count >= 1)
             {
-                int power10 = Convert.ToInt32(Math.Pow(10, count)); //100 //10
-                int digit = Math.DivRem(remainder, power10, out remainder); //1 //
-                sum += digit; // 0+1
-                count--; //1
+                int power10 = Convert.ToInt32(Math.Pow(10, count));
+                int digit = Math.DivRem(remainder, power10, out remainder);
+                sum += digit;
+                count--;
             }
         sum = sum + remainder;
         WriteLine($"Сумма цифр числа {number} = {sum}");
 
+    }
+    /// <summary>
+    /// Задача 29: Напишите программу, которая задаёт массив из N элементов (из диапазона [0-14] ) и выводит на экран десятичное представление числа, записанного в СС по основанию 15
+    /// </summary>
+    public static void Task29()
+    {
+        
     }
 }
 
