@@ -23,11 +23,35 @@ public static class HWork4
             }
             else
             {
-                for (double power = 1; power <= numberB; power++)
+                for (int power = 1; power <= numberB; power++)
                 {
                 AToThePowerB *= numberA;
                 }
             }
         WriteLine($"{numberA} в степени {numberB} = {AToThePowerB}");
     }
+    /// <summary>
+    ///  Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе. Строки использовать нельзя.
+    /// </summary>
+    public static void Task27()
+    {
+        WriteLine("Введите число");
+        int number = Math.Abs(Convert.ToInt32(ReadLine())); //123
+          
+        int numberOfDigits = Convert.ToInt32(Math.Log10(number) - (Math.Log10(number) % 1) + 1); //3
+        int count = numberOfDigits - 1; //2
+        int firstDigit = Math.DivRem(number, Convert.ToInt32(Math.Pow(10, count)), out int remainder);
+        int sum = firstDigit;
+        while (count >= 1)
+            {
+                int power10 = Convert.ToInt32(Math.Pow(10, count)); //100 //10
+                int digit = Math.DivRem(remainder, power10, out remainder); //1 //
+                sum += digit; // 0+1
+                count--; //1
+            }
+        sum = sum + remainder;
+        WriteLine($"Сумма цифр числа {number} = {sum}");
+
+    }
 }
+
