@@ -1,4 +1,5 @@
 using static System.Console;
+using static LibraryForArray;
 /// <summary>
 /// домашняя работа к семинару 4
 /// </summary>
@@ -9,26 +10,11 @@ public static class HWork4
     /// </summary>
     public static void Task25()
     {
-        WriteLine("Введите первое число");
-        double numberA = Convert.ToInt64(ReadLine());
-        WriteLine("Введите второе число");
-        double numberB = Convert.ToInt64(ReadLine());
-        double AToThePowerB = 1;
-            if (numberB < 0)
-            {
-                for (int power = -1; power >= numberB; power--)
-                {
-                    AToThePowerB *= 1/numberA;
-                }
-            }
-            else
-            {
-                for (int power = 1; power <= numberB; power++)
-                {
-                AToThePowerB *= numberA;
-                }
-            }
-        WriteLine($"{numberA} в степени {numberB} = {AToThePowerB}");
+        Console.WriteLine("Введите первое число");
+        int numberA = Convert.ToInt32(ReadLine());
+        Console.WriteLine("Введите второе число");
+        int numberB = Convert.ToInt32(ReadLine());
+        Console.WriteLine($"{numberA} в степени {numberB} = {LibraryTasks.Pow(numberA, numberB)}");
     }
     /// <summary>
     ///  Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе. Строки использовать нельзя.
@@ -38,16 +24,15 @@ public static class HWork4
         WriteLine("Введите число");
         int number = Math.Abs(Convert.ToInt32(ReadLine()));
           
-        int numberOfDigits = Convert.ToInt32(Math.Log10(number) - (Math.Log10(number) % 1) + 1);
-        int count = numberOfDigits - 1;
-        int firstDigit = Math.DivRem(number, Convert.ToInt32(Math.Pow(10, count)), out int remainder);
+        int numberOfDigits = Convert.ToInt32(Math.Log10(number) - (Math.Log10(number) % 1));
+        int firstDigit = Math.DivRem(number, Convert.ToInt32(Math.Pow(10, numberOfDigits)), out int remainder);
         int sum = firstDigit;
-        while (count >= 1)
+        while (numberOfDigits >= 1)
             {
-                int power10 = Convert.ToInt32(Math.Pow(10, count));
+                int power10 = Convert.ToInt32(Math.Pow(10, numberOfDigits));
                 int digit = Math.DivRem(remainder, power10, out remainder);
                 sum += digit;
-                count--;
+                numberOfDigits--;
             }
         sum = sum + remainder;
         WriteLine($"Сумма цифр числа {number} = {sum}");
@@ -58,7 +43,11 @@ public static class HWork4
     /// </summary>
     public static void Task29()
     {
-        
+        WriteLine("Введите число элементов массива");
+        int N = Convert.ToInt32(ReadLine());
+        int[] array = CreateArray(N);
+        FillArray(array, 0, 15);
+        WriteLine(PrintArray(array));
     }
 }
 
