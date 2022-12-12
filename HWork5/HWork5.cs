@@ -15,4 +15,14 @@ public static class HWork5
         FillArray(array, 100, 999);
         WriteLine($" Для массива:{PrintArray(array)} количество четных чисел = {CountOfEven(array)}");
     }
+
+    /// <summary>
+    /// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+    /// </summary>
+    public static void Task36()
+    {
+        int[] array = CreateArray(14);
+        FillArray(array, 0, 10);
+        WriteLine($" Для массива [{PrintArray(array)}] cумма элементов, стоящих на нечётных позициях = {SumUnevenPos(array)}");
+    }
 }

@@ -2,10 +2,11 @@ using static System.Console;
 /// <summary>
 /// Библиотека для работы с массивами
 /// <para> Метод создания массива - CreateArray </para>
-/// <para> Метод заполнения массива - FillArray </para>
+/// <para> Метод заполнения массива случайными числами от min до max - FillArray </para>
 /// <para> Метод вывода массива - PrintArray </para>
 /// <para> Метод печати массива в виде числа в  15ричной СС - PrintArrayFift </para>
 /// <para> Метод нахождения количества четных чисел в массиве - CountOfEven </para>
+/// <para> Метод нахождения суммы элементов массива, стоящих на нечётных позициях - SumUnevenPos </para>
 /// </summary>
 public static class LibraryForArray
 {
@@ -20,7 +21,7 @@ public static class LibraryForArray
         return new int[count];
     }
 /// <summary>
-/// Метод заполнения массива
+/// Метод заполнения массива случайными числами от min до max
 /// </summary>
 /// <param name="array"> пустой массив </param>
 /// <param name="min">минимальное значение элемента массива</param>
@@ -94,5 +95,22 @@ public static string PrintArrayFift(int[] array)
             }
         }
         return count;    
+    }
+
+    /// <summary>
+    /// Метод нахождения суммы элементов массива, стоящих на нечётных позициях.
+    /// </summary>
+    /// <returns></returns>
+    public static int SumUnevenPos(int[] array)
+    {
+        int sizeArray = array.Length;
+        int sum = 0;
+        int i = 1;
+        while (i < sizeArray)
+        {
+            sum += array[i];
+            i += 2;
+        }
+        return sum;
     }
 }
