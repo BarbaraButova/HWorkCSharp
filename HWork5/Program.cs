@@ -1,2 +1,2 @@
 ﻿using static HWork5;
-Task36();
+Task38();

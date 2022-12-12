@@ -3,10 +3,12 @@ using static System.Console;
 /// Библиотека для работы с массивами
 /// <para> Метод создания массива - CreateArray </para>
 /// <para> Метод заполнения массива случайными числами от min до max - FillArray </para>
+/// <para> Метод заполнения массива случайными вещественными числами от min до max FillArrayReal <para>
 /// <para> Метод вывода массива - PrintArray </para>
 /// <para> Метод печати массива в виде числа в  15ричной СС - PrintArrayFift </para>
 /// <para> Метод нахождения количества четных чисел в массиве - CountOfEven </para>
 /// <para> Метод нахождения суммы элементов массива, стоящих на нечётных позициях - SumUnevenPos </para>
+/// <para> Метод метод нахождения разницы между максимальным и минимальным элементами массива -  DifMaxMin </para>
 /// </summary>
 public static class LibraryForArray
 {
@@ -21,7 +23,7 @@ public static class LibraryForArray
         return new int[count];
     }
 /// <summary>
-/// Метод заполнения массива случайными числами от min до max
+/// Метод заполнения массива случайными целыми числами от min до max
 /// </summary>
 /// <param name="array"> пустой массив </param>
 /// <param name="min">минимальное значение элемента массива</param>
@@ -35,7 +37,16 @@ public static class LibraryForArray
         }
 
     }
-/// <summary>
+
+
+// Метод заполнения массива случайными вещественными числами 
+
+
+
+
+
+
+
 /// Метод печати массива
 /// </summary>
 /// <param name="array">имя массива</param>
@@ -113,4 +124,28 @@ public static string PrintArrayFift(int[] array)
         }
         return sum;
     }
+    /// <summary>
+    /// Метод метод нахождения разницы между максимальным и минимальным элементами массива.
+    /// </summary>
+    /// <returns></returns>
+    public static double DifMaxMin(int[] array)
+    {
+        double max = array[0];
+        double min = array[0];
+        int sizeArray = array.Length;
+        for (int i = 1; i < sizeArray; i++)
+        {
+            if (array[i] >= max)
+            {
+                max = array[i];
+            }
+            else if (array[i] <= min)
+            {
+                min = array[i];
+            }
+        }
+        return max - min;
+
+    }
+
 }
