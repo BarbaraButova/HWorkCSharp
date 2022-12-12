@@ -1,7 +1,11 @@
 using static System.Console;
 using static LibraryForArray;
+using static LibraryTasks;
 /// <summary>
 /// домашняя работа к семинару 4
+/// <para> Задача №25 - Task25</para>
+/// <para> Задача №27 - Task27</para>
+/// <para> Задача №29 - Task29</para>
 /// </summary>
 public static class HWork4
 {
@@ -10,13 +14,13 @@ public static class HWork4
     /// </summary>
     public static void Task25()
     {
-        Console.WriteLine("Введите первое число");
+        WriteLine("Введите первое число");
         int numberA = Convert.ToInt32(ReadLine());
-        Console.WriteLine("Введите второе число");
+        WriteLine("Введите второе число");
         int numberB = Convert.ToInt32(ReadLine());
-        Console.WriteLine($"{numberA} в степени {numberB} = {LibraryTasks.Pow(numberA, numberB)}");
+        WriteLine($"{numberA} в степени {numberB} = {LibraryTasks.Pow(numberA, numberB)}");
     }
-    
+
     /// <summary>
     ///  Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе. Строки использовать нельзя.
     /// </summary>
@@ -24,7 +28,7 @@ public static class HWork4
     {
         WriteLine("Введите число");
         int number = Math.Abs(Convert.ToInt32(ReadLine()));
-        WriteLine($"Сумма цифр числа {number} = {LibraryTasks.SumOfDigits(number)}");
+        WriteLine($"Сумма цифр числа {number} = {SumOfDigits(number)}");
     }
 
     /// <summary>
@@ -36,7 +40,7 @@ public static class HWork4
         int N = Convert.ToInt32(ReadLine());
         int[] array = CreateArray(N);
         FillArray(array, 0, 14);
-        WriteLine($"{PrintArrayFift(array)} -> {LibraryTasks.ToFifteenNumeralSystem(array)}");
+        WriteLine($"{PrintArrayFift(array)} -> {ToFifteenNumeralSystem(array)}");
     }
 }
 

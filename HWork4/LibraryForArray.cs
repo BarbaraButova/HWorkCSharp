@@ -1,9 +1,10 @@
 using static System.Console;
 /// <summary>
-/// Библиотека для решения задач
-/// <para>Метод создания массива - CreateArray </para>
-/// <para>Метод заполнения массива - FillArray </para>
+/// Библиотека для работы с массивами
+/// <para> Метод создания массива - CreateArray </para>
+/// <para> Метод заполнения массива - FillArray </para>
 /// <para> Метод вывода массива - PrintArray </para>
+/// <para> Метод печати массива в виде числа в  15ричной СС - PrintArrayFift </para>
 /// </summary>
 public static class LibraryForArray
 {
@@ -70,7 +71,7 @@ public static string PrintArrayFift(int[] array)
             else if (array[i] == 14)
                 output += $"E";
             else
-                output += array[i];
+                output += $"{array[i]}";
         }
         return output;
     }
