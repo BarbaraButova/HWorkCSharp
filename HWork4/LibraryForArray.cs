@@ -33,12 +33,12 @@ public static class LibraryForArray
 
     }
 /// <summary>
-/// Метод вывода массива
+/// Метод печати массива
 /// </summary>
 /// <param name="array">имя массива</param>
 /// <returns></returns>
 public static string PrintArray(int[] array)
-{
+    {
         string output = String.Empty;
         int size = array.Length;
         for (int i = 0; i < size; i++)
@@ -48,6 +48,30 @@ public static string PrintArray(int[] array)
         return output;
     }
 
-
-
+/// <summary>
+/// Метод печати массива в виде числа в  15ричной СС
+/// </summary>
+/// <param name="array"></param>
+/// <returns></returns>
+public static string PrintArrayFift(int[] array)
+    {
+        string output = String.Empty;
+        int size = array.Length;
+        for (int i = 0; i < size; i++)
+        {
+            if (array[i] == 10)
+                output += $"A";
+            else if (array[i] == 11)
+                output += $"B";
+            else if (array[i] == 12)
+                output += $"C";
+            else if (array[i] == 13)
+                output += $"D";
+            else if (array[i] == 14)
+                output += $"E";
+            else
+                output += array[i];
+        }
+        return output;
+    }
 }

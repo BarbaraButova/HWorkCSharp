@@ -16,11 +16,11 @@ public static class LibraryTasks
         return APowB;
     }
 
-/// <summary>
-/// Сумма цифр в целом числе
-/// </summary>
-/// <param name="number"></param>
-/// <returns></returns>
+    /// <summary>
+    /// Сумма цифр в целом числе
+    /// </summary>
+    /// <param name="number"></param>
+    /// <returns></returns>
     public static int SumOfDigits(int number)
     {
         int sum = 0;
@@ -34,8 +34,14 @@ public static class LibraryTasks
     /// <summary>
     /// Метод перевода в 15ричную СС
     /// </summary>
-    //public static void ToFifteenNumeralSystem()
-    // {
-
-    //}
+    public static double ToFifteenNumeralSystem(int[] array)
+    {
+        double result = 0;
+        int count = array.Length;
+        for (int i = 0; i < count; i++)
+        {
+            result += array[i] * Pow(15, count- 1- i);
+        }
+        return result;
+    }
 }
