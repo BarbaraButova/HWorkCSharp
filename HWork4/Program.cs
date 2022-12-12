@@ -1,7 +1,7 @@
 ﻿using static HWork4;
 using static LibraryForArray;
-Task25();
-//Task27();
+//Task25();
+Task27();
 
 //Console.WriteLine("Введите число элементов массива");
 //int N = Convert.ToInt32(Console.ReadLine());

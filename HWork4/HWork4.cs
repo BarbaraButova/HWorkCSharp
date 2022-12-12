@@ -23,19 +23,7 @@ public static class HWork4
     {
         WriteLine("Введите число");
         int number = Math.Abs(Convert.ToInt32(ReadLine()));
-          
-        int numberOfDigits = Convert.ToInt32(Math.Log10(number) - (Math.Log10(number) % 1));
-        int firstDigit = Math.DivRem(number, Convert.ToInt32(Math.Pow(10, numberOfDigits)), out int remainder);
-        int sum = firstDigit;
-        while (numberOfDigits >= 1)
-            {
-                int power10 = Convert.ToInt32(Math.Pow(10, numberOfDigits));
-                int digit = Math.DivRem(remainder, power10, out remainder);
-                sum += digit;
-                numberOfDigits--;
-            }
-        sum = sum + remainder;
-        WriteLine($"Сумма цифр числа {number} = {sum}");
+        WriteLine($"Сумма цифр числа {number} = {LibraryTasks.SumOfDigits(number)}");
 
     }
     /// <summary>
