@@ -31,9 +31,8 @@ public static class HWork5
     /// </summary>
     public static void Task38()
     {
-        int[] array = CreateArray(10);
-        FillArray(array, -10, 10);
-        WriteLine($" Для массива [{PrintArray(array)}] разница между максимальным и минимальным элементами массива = {DifMaxMin(array)}");
-
+        double[] array = CreateArrayReal(10);
+        FillArrayReal(array, -10, 10);
+        WriteLine($"Для массива {PrintArrayReal(array)}  разница между максимальным и минимальным элементом = {DifMaxMin(array):f3}");
     }
 }
