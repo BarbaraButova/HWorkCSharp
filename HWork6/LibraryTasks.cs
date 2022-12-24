@@ -58,6 +58,14 @@ public static class LibraryTasks
         }
         return result;
     }
-    
+
+    public static string IntersectionPoint(double k1, double b1, double k2, double b2)
+    {
+        string output = String.Empty;
+        double IntersectionPointX = (b2 - b1) / (k1 - k2);
+        double IntersectionPointY = k1 * IntersectionPointX + b1;
+        output = $"({IntersectionPointX:f3};{IntersectionPointY:f3})";
+        return output;
+    }
 
 }

@@ -1,1 +1,1 @@
-﻿HWork6.Task34();
+﻿HWork6.Task43();
