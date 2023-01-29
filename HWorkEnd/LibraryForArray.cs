@@ -41,7 +41,7 @@ public static class LibraryForArray
     /// <summary>
     /// Метод создания массива строк
     /// </summary>
-    /// <param name="count"></param>
+    /// <param name="count"> размер массива </param>
     /// <returns></returns>
     public static string[] CreateArrayString(int count)
     {
@@ -63,11 +63,6 @@ public static class LibraryForArray
         }
 
     }
-    /// <summary>
-    /// Метод создания массива из строк
-    /// </summary>
-    /// <param name="count"></param>
-    /// <returns></returns>
 
     /// <summary>
     /// // Метод заполнения массива случайными вещественными числами
@@ -103,7 +98,7 @@ public static class LibraryForArray
     /// </summary>
     /// <param name="array">имя массива</param>
     /// <returns></returns>
-    public static string PrintArray(int[] array)
+    public static string PrintArray(string[] array)
     {
         string output = String.Empty;
         int size = array.Length;
@@ -236,10 +231,9 @@ public static class LibraryForArray
     /// </summary>
     /// <param name="array"></param>
     /// <returns></returns>
-    public static int CountCharforArray (string[] array)
+    public static int CountCharforArray (string[] array, int countChar = 3)
     {
         int count = 0;
-        int countChar = 3;
         int size = array.Length;
         for (int i = 0; i < size; i++)
         {
@@ -257,7 +251,7 @@ public static class LibraryForArray
     /// <param name="FirstArray"> исходный массив</param>
     /// <param name="NewArray"> новый массив </param>
     /// <returns></returns>
-    public static string NewArrayFromFirastArray (string[] FirstArray, string[] NewArray)
+    public static void NewArrayFromFirastArray (string[] FirstArray, string[] NewArray)
     {
         int size = FirstArray.Length;
         int countChar = 3;
@@ -269,6 +263,5 @@ public static class LibraryForArray
                 j++;
             }
         }
-        return NewArray;
     }
 }
