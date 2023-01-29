@@ -1,2 +1,1 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿  string[] FirstArray = new string[] {"Мы", "не", "заметили", "жука", "И", "рамы", "зимние", "закрыли", ",", "А", "он", "живой", ",", "он", "жив", "пока", ",", "Жужжит", "в", "окне", ",", "Расправив", "крылья", "…" };

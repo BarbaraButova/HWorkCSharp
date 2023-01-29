@@ -3,6 +3,7 @@
 /// Библиотека для работы с массивами
 /// <para> Метод создания массива - CreateArray </para>
 /// <para> Метод создания массива вещественных чисел - CreateArrayReal </para>
+/// <para> Метод создания массива из строк - CreateArrayString </para>
 /// <para> Метод заполнения массива случайными числами от min до max - FillArray </para>
 /// <para> Метод заполнения массива случайными вещественными числами - FillArrayReal </para>
 /// <para> Метод пользовательского ввода элементов массива - EnterArrayElements <para>
@@ -32,10 +33,19 @@ public static class LibraryForArray
     /// <param name="count">Количество элементов нового массива</param>
     /// <returns>Созданный массив из count элементов</returns>
     public static double[] CreateArrayReal(int count)
-
     {
         return new double[count];
     }
+    /// <summary>
+    /// Метод создания массива строк
+    /// </summary>
+    /// <param name="count"></param>
+    /// <returns></returns>
+    public static string[] CreateArrayString(int count)
+    {
+        return new string[count];
+    }
+
     /// <summary>
     /// Метод заполнения массива случайными целыми числами от min до max
     /// </summary>
@@ -51,6 +61,11 @@ public static class LibraryForArray
         }
 
     }
+    /// <summary>
+    /// Метод создания массива из строк
+    /// </summary>
+    /// <param name="count"></param>
+    /// <returns></returns>
 
     /// <summary>
     /// // Метод заполнения массива случайными вещественными числами
@@ -214,6 +229,18 @@ public static class LibraryForArray
         return count;
     }
 
-
+    public static int CountCharforArray (string array)
+    {
+        int count = 0;
+        int size = array.Length;
+        for (int i = 0; i < size; i++)
+        {
+            if (array[i].Length <= 3)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
 
 }
