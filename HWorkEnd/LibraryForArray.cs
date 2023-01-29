@@ -232,10 +232,11 @@ public static class LibraryForArray
     public static int CountCharforArray (string array)
     {
         int count = 0;
+        int countChar = 3;
         int size = array.Length;
         for (int i = 0; i < size; i++)
         {
-            if (array[i].Length <= 3)
+            if (array[i].Length <= countChar)
             {
                 count++;
             }
