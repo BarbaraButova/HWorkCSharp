@@ -14,6 +14,8 @@
 /// <para> Метод нахождения суммы элементов массива, стоящих на нечётных позициях - SumUnevenPos </para>
 /// <para> Метод метод нахождения разницы между максимальным и минимальным элементами массива -  DifMaxMin </para>
 /// <para> Метод нахождения количества положительных чисел массива - NumberOfPositive </para>
+/// <para> Метод нахождения количества строк заданной длинны в массиве - CountCharforArray <para>
+/// <para> Метод заполнения массива элементами из другого массива, по условию количества символов элемента - NewArrayFromFirastArray <para>
 /// </summary>
 public static class LibraryForArray
 {
@@ -229,7 +231,12 @@ public static class LibraryForArray
         return count;
     }
 
-    public static int CountCharforArray (string array)
+    /// <summary>
+    /// метод нахождения количества строк заданной длинны в массиве
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public static int CountCharforArray (string[] array)
     {
         int count = 0;
         int countChar = 3;
@@ -244,4 +251,24 @@ public static class LibraryForArray
         return count;
     }
 
+    /// <summary>
+    /// Метод заполнения массива элементами из другого массива, по условию количества символов элемента
+    /// </summary>
+    /// <param name="FirstArray"> исходный массив</param>
+    /// <param name="NewArray"> новый массив </param>
+    /// <returns></returns>
+    public static string NewArrayFromFirastArray (string[] FirstArray, string[] NewArray)
+    {
+        int size = FirstArray.Length;
+        int countChar = 3;
+        for (int i = 0, j = 0; i < size; i++)
+        {
+            if (FirstArray[i].Length <= countChar)
+            {
+                NewArray[j] = FirstArray[i];
+                j++;
+            }
+        }
+        return NewArray;
+    }
 }
